@@ -12,11 +12,15 @@
             padding: 0;
             background-color: #fafafa;
             color: #333;
+            /* Added to help fit on one page */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
-            background-color: #ff7f00; /* Vibrant Orange */
+            background-color: #ff7f00;
             color: white;
-            padding: 20px 40px;
+            padding: 15px 40px; /* Reduced padding */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -24,7 +28,7 @@
         }
         header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 22px; /* Slightly smaller */
             letter-spacing: 1px;
         }
         header nav a {
@@ -40,35 +44,38 @@
             text-decoration: underline;
         }
         .hero {
-            background-color: #ff9900; /* Lighter Orange for Hero */
+            background-color: #ff9900;
             color: white;
-            padding: 50px 40px;
+            padding: 30px 40px; /* Reduced padding */
         }
         .hero h2 {
             margin-top: 0;
-            font-size: 36px;
+            font-size: 28px; /* Reduced size */
+            margin-bottom: 10px;
         }
         .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            line-height: 1.5;
+            font-size: 16px; /* Reduced size */
+            max-width: 800px;
+            line-height: 1.4;
+            margin: 0;
         }
         .container {
-            max-width: 800px;
-            margin: -30px auto 40px;
+            max-width: 900px;
+            margin: -15px auto 20px; /* Tighter margins */
             padding: 0 20px;
+            flex: 1; /* Pushes footer down */
         }
         .card-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
+            grid-template-columns: 1fr 1fr 1fr; /* 3 columns to save vertical space */
+            gap: 15px;
+            margin-bottom: 15px;
         }
         .card {
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 15px; /* Tighter padding */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             transition: transform 0.2s ease;
         }
         .card:hover {
@@ -77,46 +84,54 @@
         .card h3 {
             color: #e67300;
             margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 16px;
         }
         .card p {
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
-            line-height: 1.4;
+            line-height: 1.3;
+            margin: 0;
         }
         .talk-to-tess {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 20px; /* Tighter padding */
+            border-radius: 8px;
             border-left: 5px solid #ff7f00;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
         }
         .talk-to-tess h3 {
             color: #e67300;
             margin-top: 0;
-            font-size: 22px;
+            margin-bottom: 10px;
+            font-size: 20px;
         }
         .talk-to-tess p {
             color: #555;
-            line-height: 1.5;
+            line-height: 1.4;
+            font-size: 14px;
+            margin-top: 0;
         }
         .talk-to-tess ul {
             color: #555;
-            line-height: 1.6;
+            line-height: 1.4;
+            font-size: 14px;
             padding-left: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            margin-top: 5px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 14px;
-            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 13px;
+            border-radius: 6px;
             overflow: hidden;
         }
         th, td {
             border: 1px solid #eee;
-            padding: 12px 15px;
+            padding: 8px 12px; /* Tighter padding */
             text-align: left;
         }
         th {
@@ -124,12 +139,19 @@
             font-weight: 600;
             color: #e67300;
         }
+        .info-text {
+            font-size: 12px;
+            color: #777;
+            margin-top: 10px;
+            display: block;
+        }
         footer {
             text-align: center;
-            font-size: 13px;
+            font-size: 12px;
             color: #999;
-            padding: 30px;
+            padding: 15px; /* Tighter padding */
             border-top: 1px solid #eee;
+            background-color: #fafafa;
         }
     </style>
 </head>
@@ -146,7 +168,7 @@
 
     <div class="hero">
         <h2>Device Support & Claims</h2>
-        <p>Experiencing issues with your hardware? Speak with Tess, our 24/7 intelligent voice assistant. Click the button in the corner to start your secure voice session.</p>
+        <p>Experiencing issues with your hardware? Speak with Tess, our 24/7 intelligent voice assistant. Click the button in the corner to start your secure voice session, in English or Spanish.</p>
     </div>
 
     <div class="container">
@@ -159,14 +181,13 @@
                 <h3>Check Status</h3>
                 <p>Review the progress, shipping updates, and next steps for any previously submitted claims.</p>
             </div>
+            <div class="card">
+                <h3>Modify or Cancel</h3>
+                <p>Need to update your shipping address or close an existing ticket? You can manage it here via voice or our online portal.</p>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Modify or Cancel</h3>
-            <p>Need to update your shipping address or close an existing ticket? You can manage it here via voice or our online portal.</p>
-        </div>
-
-        <div class="talk-to-tess" style="margin-top: 20px;">
+        <div class="talk-to-tess">
             <h3>Speak with Tess</h3>
             <p>Click the phone button at the bottom right of your screen and enable your microphone. Tess will ask for a few details to verify your account before proceeding.</p>
             
@@ -176,28 +197,32 @@
                 <li>Live via Cognigy Voice Gateway (Endpoint "TechSure Claims Voice")</li>
             </ul>
 
+            <!-- Updated Table -->
             <table>
                 <tr>
-                    <th>Test Phone Number</th>
-                    <th>Demo Order ID</th>
-                    <th>Demo Zip Code</th>
+                    <th>Phone Number</th>
+                    <th>Order ID</th>
+                    <th>Zip Code</th>
                 </tr>
                 <tr>
-                    <td>+1 (800) 555-0199</td>
-                    <td>AX-99201</td>
-                    <td>90210</td>
+                    <td>+14155550187</td>
+                    <td>ORD-100417</td>
+                    <td>30301</td>
                 </tr>
                 <tr>
-                    <td>+44 20 7946 0958</td>
-                    <td>AX-99202</td>
-                    <td>SW1A 1AA</td>
+                    <td>+49301234590</td>
+                    <td>ORD-100238</td>
+                    <td>73301</td>
                 </tr>
                 <tr>
-                    <td>+61 3 7010 1234</td>
-                    <td>AX-99203</td>
-                    <td>3000</td>
+                    <td>+61412345911</td>
+                    <td>ORD-100659</td>
+                    <td>98101</td>
                 </tr>
             </table>
+            
+            <!-- New Info Text -->
+            <span class="info-text">Demo test credentials. Sample claims for 100417: C-9342, C-8416 (active), C-7653 (closed).</span>
         </div>
     </div>
 
@@ -206,11 +231,18 @@
     </footer>
 
     <!-- Cognigy Click-to-Call Widget (Voice Gateway) -->
-<script src="https://github.com/Cognigy/click-to-call-widget/releases/latest/download/webRTCWidget.js"></script>
+    <script src="https://github.com/Cognigy/click-to-call-widget/releases/latest/download/webRTCWidget.js"></script>
     <script>
         addEventListener("load", (event) => {
             if (window.initWebRTCWidget) {
-                window.initWebRTCWidget("https://endpoint-trial.cognigy.ai/220e6ae85becd8057ff5bb0a96b1d9f20960f458d25e694951d34a4dbee2cb7e");
+                // Added title and subtitle options to change the text on the green widget
+                window.initWebRTCWidget(
+                    "https://endpoint-trial.cognigy.ai/220e6ae85becd8057ff5bb0a96b1d9f20960f458d25e694951d34a4dbee2cb7e",
+                    {
+                        title: "Tess - TechSure",
+                        subtitle: "Claims & Device Support"
+                    }
+                );
             }
         });
     </script>
