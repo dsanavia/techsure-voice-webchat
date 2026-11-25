@@ -193,10 +193,9 @@
             
             <p><strong>How to Speak with the AI Agent:</strong></p>
             <ul>
-                <li><strong>Click-to-Call (public page):</strong> <a href="https://dsanavia.github.io/techsure-voice-webchat/" target="_blank">https://dsanavia.github.io/techsure-voice-webchat/</a> – click the green phone button (bottom right) and allow microphone access. Desktop Chrome/Edge recommended.</li>
+                <li><strong>Click-to-Call:</strong> Click the green phone button at the bottom right of this page and allow microphone access. Desktop Chrome/Edge recommended.</li>
                 <li>Live via Cognigy Voice Gateway (Endpoint "TechSure Claims Voice")</li>
             </ul>
-
             <!-- Updated Table -->
             <table>
                 <tr>
@@ -235,14 +234,7 @@
     <script>
         addEventListener("load", (event) => {
             if (window.initWebRTCWidget) {
-                // Added title and subtitle options to change the text on the green widget
-                window.initWebRTCWidget(
-                    "https://endpoint-trial.cognigy.ai/220e6ae85becd8057ff5bb0a96b1d9f20960f458d25e694951d34a4dbee2cb7e",
-                    {
-                        title: "Tess - TechSure",
-                        subtitle: "Claims & Device Support"
-                    }
-                );
+                window.initWebRTCWidget("https://endpoint-trial.cognigy.ai/220e6ae85becd8057ff5bb0a96b1d9f20960f458d25e694951d34a4dbee2cb7e");
             }
         });
     </script>
