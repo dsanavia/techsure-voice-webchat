@@ -100,6 +100,12 @@
             color: #555;
             line-height: 1.5;
         }
+        .talk-to-tess ul {
+            color: #555;
+            line-height: 1.6;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -124,12 +130,6 @@
             color: #999;
             padding: 30px;
             border-top: 1px solid #eee;
-        }
-
-        /* Customizing the Cognigy Webchat Voice Button to Orange */
-        #cognigy-webchat .webchat-ui-button {
-            background-color: #ff7f00 !important; 
-            border-radius: 50px !important;
         }
     </style>
 </head>
@@ -169,6 +169,13 @@
         <div class="talk-to-tess" style="margin-top: 20px;">
             <h3>Speak with Tess</h3>
             <p>Click the phone button at the bottom right of your screen and enable your microphone. Tess will ask for a few details to verify your account before proceeding.</p>
+            
+            <p><strong>How to Speak with the AI Agent:</strong></p>
+            <ul>
+                <li><strong>Click-to-Call (public page):</strong> <a href="https://dsanavia.github.io/techsure-voice-webchat/" target="_blank">https://dsanavia.github.io/techsure-voice-webchat/</a> – click the green phone button (bottom right) and allow microphone access. Desktop Chrome/Edge recommended.</li>
+                <li>Live via Cognigy Voice Gateway (Endpoint "TechSure Claims Voice")</li>
+            </ul>
+
             <table>
                 <tr>
                     <th>Test Phone Number</th>
@@ -198,22 +205,12 @@
         TechSure is a fictional brand created for demonstration and conversational AI testing purposes.
     </footer>
 
-    <!-- Cognigy Webchat Integration -->
-    <script src="https://unpkg.com/@cognigy/webchat@3"></script>
+    <!-- Cognigy Click-to-Call Widget (Voice Gateway) -->
+    <script src="https://github.com/Cognigy/click-to-call-widget/releases/latest/download/webRTCWidget.js"></script>
     <script>
-        initCognigyWebchat({
-            // ⚠️ REPLACE THIS URL with your actual Cognigy Endpoint URL
-            URL: "https://endpoint-trial.cognigy.ai/YOUR_ENDPOINT_ID", 
-            
-            settings: {
-                enableSpeechInput: true,
-            },
-            theme: {
-                // Updated theme colors to match the orange layout
-                primaryColor: "#ff7f00",
-                botMessageColor: "#f1f1f1",
-                userMessageColor: "#ff7f00",
-                userMessageTextColor: "#ffffff"
+        addEventListener("load", (event) => {
+            if (window.initWebRTCWidget) {
+                window.initWebRTCWidget("wss://endpoint-trial.cognigy.ai/a69c449a42ce19cc5a3bc5fd6834e629f176ddd69571465b075fccc3d2eadb71/voiceGateway");
             }
         });
     </script>
