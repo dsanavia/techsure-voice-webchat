@@ -5,158 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechSure - Device Support & Claims</title>
     <style>
-        /* Base styling with an Orange Theme */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fafafa;
-            color: #333;
-            /* Added to help fit on one page */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: #ff7f00;
-            color: white;
-            padding: 15px 40px; /* Reduced padding */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 22px; /* Slightly smaller */
-            letter-spacing: 1px;
-        }
-        header nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            opacity: 0.9;
-        }
-        header nav a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-        .hero {
-            background-color: #ff9900;
-            color: white;
-            padding: 30px 40px; /* Reduced padding */
-        }
-        .hero h2 {
-            margin-top: 0;
-            font-size: 28px; /* Reduced size */
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 16px; /* Reduced size */
-            max-width: 800px;
-            line-height: 1.4;
-            margin: 0;
-        }
-        .container {
-            max-width: 900px;
-            margin: -15px auto 20px; /* Tighter margins */
-            padding: 0 20px;
-            flex: 1; /* Pushes footer down */
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* 3 columns to save vertical space */
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        .card {
-            background: white;
-            padding: 15px; /* Tighter padding */
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
-        .card:hover {
-            transform: translateY(-2px);
-        }
-        .card h3 {
-            color: #e67300;
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-        .card p {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.3;
-            margin: 0;
-        }
-        .talk-to-tess {
-            background: white;
-            padding: 20px; /* Tighter padding */
-            border-radius: 8px;
-            border-left: 5px solid #ff7f00;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        .talk-to-tess h3 {
-            color: #e67300;
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-        .talk-to-tess p {
-            color: #555;
-            line-height: 1.4;
-            font-size: 14px;
-            margin-top: 0;
-        }
-        .talk-to-tess ul {
-            color: #555;
-            line-height: 1.4;
-            font-size: 14px;
-            padding-left: 20px;
-            margin-bottom: 15px;
-            margin-top: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 13px;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-        th, td {
-            border: 1px solid #eee;
-            padding: 8px 12px; /* Tighter padding */
-            text-align: left;
-        }
-        th {
-            background-color: #fff3e0;
-            font-weight: 600;
-            color: #e67300;
-        }
-        .info-text {
-            font-size: 12px;
-            color: #777;
-            margin-top: 10px;
-            display: block;
-        }
-        footer {
-            text-align: center;
-            font-size: 12px;
-            color: #999;
-            padding: 15px; /* Tighter padding */
-            border-top: 1px solid #eee;
-            background-color: #fafafa;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #fafafa; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background-color: #ff7f00; color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        header h1 { margin: 0; font-size: 22px; letter-spacing: 1px; }
+        header nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 14px; font-weight: 500; opacity: 0.9; }
+        header nav a:hover { opacity: 1; text-decoration: underline; }
+        .hero { background-color: #ff9900; color: white; padding: 30px 40px; }
+        .hero h2 { margin-top: 0; font-size: 28px; margin-bottom: 10px; }
+        .hero p { font-size: 16px; max-width: 800px; line-height: 1.4; margin: 0; }
+        .container { max-width: 900px; margin: -15px auto 20px; padding: 0 20px; flex: 1; }
+        .card-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.2s ease; }
+        .card:hover { transform: translateY(-2px); }
+        .card h3 { color: #e67300; margin-top: 0; margin-bottom: 8px; font-size: 16px; }
+        .card p { font-size: 13px; color: #666; line-height: 1.3; margin: 0; }
+        .talk-to-tess { background: white; padding: 20px; border-radius: 8px; border-left: 5px solid #ff7f00; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .talk-to-tess h3 { color: #e67300; margin-top: 0; margin-bottom: 10px; font-size: 20px; }
+        .talk-to-tess p { color: #555; line-height: 1.4; font-size: 14px; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; border-radius: 6px; overflow: hidden; }
+        th, td { border: 1px solid #eee; padding: 8px 12px; text-align: left; }
+        th { background-color: #fff3e0; font-weight: 600; color: #e67300; }
+        .info-text { font-size: 12px; color: #777; margin-top: 10px; display: block; }
+        footer { text-align: center; font-size: 12px; color: #999; padding: 15px; border-top: 1px solid #eee; background-color: #fafafa; }
     </style>
 </head>
 <body>
-
     <header>
         <h1>TechSure</h1>
         <nav>
@@ -165,12 +38,10 @@
             <a href="#">Contact</a>
         </nav>
     </header>
-
     <div class="hero">
         <h2>Device Support & Claims</h2>
         <p>Experiencing issues with your hardware? Speak with Tess, our 24/7 intelligent voice assistant. Click the button in the corner to start your secure voice session, in English or Spanish.</p>
     </div>
-
     <div class="container">
         <div class="card-grid">
             <div class="card">
@@ -186,12 +57,11 @@
                 <p>Need to update your shipping address or close an existing ticket? You can manage it here via voice or our online portal.</p>
             </div>
         </div>
-
-               <div class="talk-to-tess">
+        <div class="talk-to-tess">
             <h3>Speak with Tess</h3>
             <p>Click the phone button at the bottom right of your screen and enable your microphone. Tess will ask for a few details to verify your account before proceeding.</p>
             
-            <!-- Updated Table -->
+            <!-- TABLA CORREGIDA CON LOS DATOS REALES DEL CAPSTONE -->
             <table>
                 <tr>
                     <th>Phone Number</th>
@@ -199,32 +69,31 @@
                     <th>Zip Code</th>
                 </tr>
                 <tr>
-                    <td>+14155550187</td>
-                    <td>ORD-100417</td>
-                    <td>30301</td>
+                    <td>+14155550102</td>
+                    <td>ORD-100002</td>
+                    <td>10001</td>
                 </tr>
                 <tr>
-                    <td>+49301234590</td>
-                    <td>ORD-100238</td>
-                    <td>73301</td>
+                    <td>+49301234567</td>
+                    <td>ORD-100001</td>
+                    <td>94105</td>
                 </tr>
                 <tr>
-                    <td>+61412345911</td>
-                    <td>ORD-100659</td>
-                    <td>98101</td>
+                    <td>+61412345678</td>
+                    <td>ORD-100003</td>
+                    <td>60601</td>
                 </tr>
             </table>
             
-            <!-- New Info Text -->
-            <span class="info-text">Demo test credentials. Sample claims for ORD-100417: C-9342, C-8416 (active), C-7653 (closed).</span>
+            <!-- TEXTO DE AYUDA CORREGIDO -->
+            <span class="info-text">Demo credentials for verification. Use the Order ID to check existing claims (e.g., C-225210 or C-751608).</span>
         </div>
     </div>
-
     <footer>
         TechSure is a fictional brand created for demonstration and conversational AI testing purposes.
     </footer>
 
-    <!-- Cognigy Click-to-Call Widget (Voice Gateway) -->
+    <!-- Cognigy Click-to-Call Widget -->
     <script src="https://github.com/Cognigy/click-to-call-widget/releases/latest/download/webRTCWidget.js"></script>
     <script>
         addEventListener("load", (event) => {
